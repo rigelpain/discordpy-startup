@@ -2,15 +2,10 @@ from discord.ext import commands
 import os
 import traceback
 
-bot = commands.Bot(command_prefix='/')
+client = commands.Bot(command_prefix='/')
+TOKEN = os.environ['DISCORD_BOT_TOKEN']
 
-# 自分のBotのアクセストークンに置き換えてください
-token = os.environ['DISCORD_BOT_TOKEN']
-
-# インストールした discord.py を読み込む
-import discord
 import datetime
-
 import numpy as np
 import random
 import times
@@ -23,12 +18,12 @@ duration_time = {}
 duration_time_adjust = {}
 
 # 起動時に動作する処理
-@bot.event
+@client.event
 async def on_ready():
     # 起動したらターミナルにログイン通知が表示される
     print('ログインしました')
 
-@bot.event
+@client.event
 # ボイチャ状態の変化で発火
 async def on_voice_state_update(member, before, after):
     print("ボイスチャンネルで変化がありました")
@@ -82,7 +77,7 @@ async def on_voice_state_update(member, before, after):
 
 
 
-@bot.event
+@client.event
 async def on_message(message):
     if message.content.startswith('!game'):
         game_name = np.array(["おえかきの森","Gartic Phone","BGA"])
@@ -95,4 +90,4 @@ async def on_message(message):
 
 
 # Botの起動とDiscordサーバーへの接続
-bot.run(token)
+client.run(TOKEN)
