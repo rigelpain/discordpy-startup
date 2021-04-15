@@ -10,9 +10,8 @@ import times
 client = commands.Bot(command_prefix='/')
 TOKEN = os.environ['DISCORD_BOT_TOKEN']
 
-
 # 接続に必要なオブジェクトを生成
-client = discord.Client()
+# client = discord.Client()
 pretime_dict = {}
 duration_time = {}
 duration_time_adjust = {}
