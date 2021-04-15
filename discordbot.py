@@ -26,6 +26,7 @@ async def on_ready():
     # 起動したらターミナルにログイン通知が表示される
     print('ログインしました')
 
+@bot.event
 # ボイチャ状態の変化で発火
 async def on_voice_state_update(member, before, after):
     print("ボイスチャンネルで変化がありました")
@@ -77,6 +78,7 @@ async def on_voice_state_update(member, before, after):
     
         del duration_time[member.name]
 
+@bot.event
 async def on_message(message):
     if message.content.startswith('!game'):
         game_name = np.array(["おえかきの森","Gartic Phone","BGA"])
