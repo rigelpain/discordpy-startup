@@ -7,7 +7,7 @@ import numpy as np
 import random
 import times
 
-client = commands.Bot(command_prefix='/')
+client = commands.Bot(command_prefix='!')
 TOKEN = os.environ['DISCORD_BOT_TOKEN']
 
 # 接続に必要なオブジェクトを生成
@@ -78,7 +78,7 @@ async def on_voice_state_update(member, before, after):
 
 @client.event
 async def on_message(message):
-    if message.content.startswith('!game'):
+    if message.content.startswith('game'):
         game_name = np.array(["おえかきの森","Gartic Phone","BGA"])
         game_link = np.array(["https://casual.hange.jp/oekaki/","https://garticphone.com/ja/","https://boardgamearena.com/"])
         game_rand = random.randint(0,2)
