@@ -2,13 +2,13 @@ from discord.ext import commands
 import os
 import traceback
 
-client = commands.Bot(command_prefix='/')
-TOKEN = os.environ['DISCORD_BOT_TOKEN']
-
 import datetime
 import numpy as np
 import random
 import times
+
+client = commands.Bot(command_prefix='/')
+TOKEN = os.environ['DISCORD_BOT_TOKEN']
 
 
 # 接続に必要なオブジェクトを生成
