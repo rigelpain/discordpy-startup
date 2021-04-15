@@ -2,6 +2,7 @@ from discord.ext import commands
 import os
 import traceback
 
+import discord
 import datetime
 import numpy as np
 import random
