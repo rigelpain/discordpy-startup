@@ -1,3 +1,7 @@
+from discord.ext import commands
+import os
+import traceback
+
 # インストールした discord.py を読み込む
 import discord
 import datetime
@@ -7,7 +11,8 @@ import random
 import times
 
 # 自分のBotのアクセストークンに置き換えてください
-TOKEN = 'ODMwODQ3MTc3MDQyNDI3OTg0.YHMouw.qq7xW-DisNFaVTL6j9yHCeZ1gmA'
+bot = commands.Bot(command_prefix='/')
+token = os.environ['DISCORD_BOT_TOKEN']
 
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
@@ -88,4 +93,4 @@ async def on_message(message):
 
 
 # Botの起動とDiscordサーバーへの接続
-client.run(TOKEN)
+bot.run(token)
