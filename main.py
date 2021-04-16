@@ -8,8 +8,8 @@ import numpy as np
 import random
 import times
 
-client = commands.Bot(command_prefix='!')
-TOKEN = os.environ['DISCORD_BOT_TOKEN']
+client = commands.Bot()
+TOKEN = "ODMwODQ3MTc3MDQyNDI3OTg0.YHMouw.50EI23FOum7GHLSYAJPO80YiOK8"
 
 # 接続に必要なオブジェクトを生成
 # client = discord.Client()
